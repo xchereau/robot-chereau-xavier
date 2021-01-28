@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/Robot-Xavier-Chereau.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=Robot-Xavier-Chereau.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=robot-xavier-chereau.x/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/projet-xavier-chereau.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=projet-xavier-chereau.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=projet-xavier-chereau.x/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/robot-xavier-chereau.x/bin
+makeDirectory ${TMPDIR}/projet-xavier-chereau.x/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/robot-xavier-chereau.x.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/projet-xavier-chereau.x.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/robot-xavier-chereau.x.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/projet-xavier-chereau.x.tar *
 checkReturnCode
 
 # Cleanup
