@@ -61,7 +61,7 @@ int receivedCheckSum;
 
 int static rcvState;
 
-void UartDecodedMessage(unsigned char c) {
+void UartDecodeMessage(unsigned char c) {
     
 
     switch (rcvState) {

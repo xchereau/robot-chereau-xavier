@@ -14,7 +14,7 @@
 #include "CB_RX1.h"
 #include "UART_Protocol.h"
 #include "automatique.h"
-#include "QEI.h"
+
 
 
 
@@ -28,8 +28,7 @@ int main(void) {
     InitTimer4();
     InitUART();
     automatique();
-    InitQEI1();
-    InitQEI2 ();
+
 
     while (1) {
         
@@ -39,7 +38,7 @@ int main(void) {
         int i;
         for (i = 0 ; i < CB_RX1_GetDataSize(); i++ ){
 
-             UartDecodedMessage(CB_RX1_Get());
+             UartDecodeMessage(CB_RX1_Get());
              //LED_BLEUE=!LED_BLEUE;
 
         }
