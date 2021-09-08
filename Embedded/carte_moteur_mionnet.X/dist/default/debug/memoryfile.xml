@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/debug/carte_moteur_mionnet.X.debug.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>49152</length>
+      <used>562</used>
+      <free>48590</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>524514</length>
+      <used>9612</used>
+      <free>514902</free>
+    </memory>
+  </executable>
+</project>
