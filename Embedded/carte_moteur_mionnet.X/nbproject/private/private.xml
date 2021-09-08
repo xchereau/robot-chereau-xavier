@@ -3,14 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/GitHub/Robot-Mael-Mionnet/Embedded/carte_moteur_mionnet.X/nbproject/Makefile-default.mk</file>
-            <file>file:/C:/GitHub/Robot-Mael-Mionnet/Embedded/carte_moteur_mionnet.X/Robot.h</file>
-            <file>file:/C:/GitHub/Robot-Mael-Mionnet/Embedded/carte_moteur_mionnet.X/main.c</file>
-            <file>file:/C:/GitHub/Robot-Mael-Mionnet/Embedded/carte_moteur_mionnet.X/IO.c</file>
-            <file>file:/C:/GitHub/Robot-Mael-Mionnet/Embedded/carte_moteur_mionnet.X/timer.c</file>
-            <file>file:/C:/GitHub/Robot-Mael-Mionnet/Embedded/carte_moteur_mionnet.X/nbproject/Makefile-impl.mk</file>
-            <file>file:/C:/GitHub/Robot-Mael-Mionnet/Embedded/carte_moteur_mionnet.X/QEI.c</file>
-            <file>file:/C:/GitHub/Robot-Mael-Mionnet/Embedded/carte_moteur_mionnet.X/Toolbox.c</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/main.c</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/QEI.c</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/ADC.h</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/main.h</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/IO.c</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/QEI.h</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/automatique.c</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/manuelle.c</file>
         </group>
     </open-files>
 </project-private>

@@ -18,6 +18,7 @@
       <itemPath>UART_Protocol.h</itemPath>
       <itemPath>automatique.h</itemPath>
       <itemPath>manuelle.h</itemPath>
+      <itemPath>QEI.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -40,12 +41,14 @@
       <itemPath>UART_Protocol.c</itemPath>
       <itemPath>automatique.c</itemPath>
       <itemPath>manuelle.c</itemPath>
+      <itemPath>QEI.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>newDisasmTemplate.disasm</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -55,7 +58,7 @@
         <targetDevice>dsPIC33EP512GM706</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>ICD3PlatformTool</platformTool>
+        <platformTool>ICD4Tool</platformTool>
         <languageToolchain>XC16</languageToolchain>
         <languageToolchainVersion>1.60</languageToolchainVersion>
         <platform>3</platform>

@@ -93,9 +93,9 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock x:Name="vitesseG" Grid.Column="0" HorizontalAlignment="Left" Margin="10" Grid.Row="0" Text="Vitesse Gauche : "/>
-                        <TextBox x:Name="textBox4" Width="72" IsReadOnly="True" Grid.Column ="1" Grid.Row ="0" Margin="5" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="textBoxmg" Width="72" IsReadOnly="True" Grid.Column ="1" Grid.Row ="0" Margin="5" HorizontalAlignment="Left"/>
                         <TextBlock x:Name="vitesseD" Grid.Column="0" HorizontalAlignment="Left" Margin="10" Grid.Row="1" TextWrapping="Wrap" Text="Vitesse Droit : " VerticalAlignment="Top"/>
-                        <TextBox x:Name="textBox5" Width="72" IsReadOnly="True" Grid.Column ="1" Grid.Row ="1" Margin="5" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="textBoxmd" Width="72" IsReadOnly="True" Grid.Column ="1" Grid.Row ="1" Margin="5" HorizontalAlignment="Left"/>
                     </Grid>
                 </StackPanel>
             </GroupBox>
