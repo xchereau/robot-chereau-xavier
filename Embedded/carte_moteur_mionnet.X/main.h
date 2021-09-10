@@ -44,8 +44,9 @@
 #define OBSTACLE_EXT_DROIT 14
 #define OBSTACLE_EXT_GAUCHE 15
 
+
 void OperatingSystemLoop(void);
 void SetNextRobotStateInAutomaticMode();
 int main (void);
-
+extern volatile int md,mg;
 #endif

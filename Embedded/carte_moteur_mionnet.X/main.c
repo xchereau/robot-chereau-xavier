@@ -64,9 +64,11 @@ unsigned char stateRobot;
 
 //Attention moteur doit inverser
 
+
 void OperatingSystemLoop(void) {
-    int md,mg;
+    
     switch (stateRobot) {
+        float md, mg;
         case STATE_ATTENTE:
             timestamp = 0;
             md=0;
@@ -190,9 +192,23 @@ void OperatingSystemLoop(void) {
             break;
 
         default:
-            stateRobot = STATE_ATTENTE;
+            mg=0;
+            md =0;
+            SetNextRobotStateInAutomaticMode();
             break;
     }
+    
+        PWMSetSpeedConsigne(md, MOTEUR_DROIT); //-10
+        PWMSetSpeedConsigne(mg, MOTEUR_GAUCHE);
+
+        
+            unsigned char payloadm [2];
+            payloadm [0] = (char) (md);
+            payloadm [1] = (char) (mg);
+           
+            int size2 = sizeof (payloadm);
+            UartEncodeAndSendMessage(0x0040, size2, payloadm);
+        
 }
 
 unsigned char nextStateRobot = 0;

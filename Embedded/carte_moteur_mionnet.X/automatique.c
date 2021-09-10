@@ -18,6 +18,8 @@ int subCounter = 0;
 
 void automatique() {
     LED_ORANGE=0;
+    PWMSetSpeedConsigne(md, MOTEUR_DROIT);
+    PWMSetSpeedConsigne(mg, MOTEUR_GAUCHE);
     if (ADCIsConversionFinished() == 1) //Conversion des données en distance (cm)
     {
         ADCClearConversionFinishedFlag();
@@ -68,6 +70,8 @@ void automatique() {
             payload [2] = (char) (robotState.distanceTelemetreDroit);
             int size = sizeof (payload);
             UartEncodeAndSendMessage(0x0030, size, payload);
+            
+
         }
         subCounter++;
         __delay32(40000);
