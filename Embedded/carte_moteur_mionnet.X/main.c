@@ -68,13 +68,13 @@ unsigned char stateRobot;
 void OperatingSystemLoop(void) {
     
     switch (stateRobot) {
-        float md, mg;
+        
         case STATE_ATTENTE:
             timestamp = 0;
-            md=0;
-            mg =0;
-            //PWMSetSpeedConsigne(0, MOTEUR_DROIT);
-            //PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
+            robotState.moteur_droit=0;
+            robotState.moteur_gauche=0;
+            PWMSetSpeedConsigne(0, MOTEUR_DROIT);
+            PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
             stateRobot = STATE_ATTENTE_EN_COURS;
 
         case STATE_ATTENTE_EN_COURS:
@@ -83,10 +83,10 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_AVANCE: //Le robot avance
-            md =-25;
-            mg=25;
-            //PWMSetSpeedConsigne(-25, MOTEUR_DROIT); //25
-            //PWMSetSpeedConsigne(25, MOTEUR_GAUCHE);
+            robotState.moteur_droit =-25;
+            robotState.moteur_gauche=25;
+            PWMSetSpeedConsigne(-25, MOTEUR_DROIT); //25
+            PWMSetSpeedConsigne(25, MOTEUR_GAUCHE);
             stateRobot = STATE_AVANCE_EN_COURS;
             break;
 
@@ -95,10 +95,10 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_TOURNE_GAUCHE: //Le robot tourne à gauche
-            md=-25;
-            md=-5 ;       
-            //PWMSetSpeedConsigne(-20, MOTEUR_DROIT); //20
-            //PWMSetSpeedConsigne(-5, MOTEUR_GAUCHE);
+            robotState.moteur_droit=-25;
+            robotState.moteur_gauche=-5 ;       
+            PWMSetSpeedConsigne(-20, MOTEUR_DROIT); //20
+            PWMSetSpeedConsigne(-5, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_GAUCHE_EN_COURS;
             break;
 
@@ -107,10 +107,11 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_TOURNE_DROITE: //Le robot tourne à droite
-            md = 5;
-            mg= 20;
-            //PWMSetSpeedConsigne(5, MOTEUR_DROIT); //-5
-            //PWMSetSpeedConsigne(20, MOTEUR_GAUCHE);
+            
+            robotState.moteur_droit = 5;
+            robotState.moteur_gauche= 20;
+            PWMSetSpeedConsigne(5, MOTEUR_DROIT); //-5
+            PWMSetSpeedConsigne(20, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_DROITE_EN_COURS;
             break;
 
@@ -119,10 +120,10 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_TOURNE_SUR_PLACE_GAUCHE: //demi-tour gauche
-            md= -15;
-            mg= -15;        
-            //PWMSetSpeedConsigne(-15, MOTEUR_DROIT); //15
-            //PWMSetSpeedConsigne(-15, MOTEUR_GAUCHE);
+            robotState.moteur_droit= -15;
+            robotState.moteur_gauche= -15;        
+            PWMSetSpeedConsigne(-15, MOTEUR_DROIT); //15
+            PWMSetSpeedConsigne(-15, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_SUR_PLACE_GAUCHE_EN_COURS;
             break;
 
@@ -131,10 +132,10 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_TOURNE_SUR_PLACE_DROITE: //demi-tour droite
-            md = 15;
-            mg = 15;
-            //PWMSetSpeedConsigne(15, MOTEUR_DROIT); //-15
-            //PWMSetSpeedConsigne(15, MOTEUR_GAUCHE);
+            robotState.moteur_droit= 15;
+            robotState.moteur_gauche = 15;
+            PWMSetSpeedConsigne(15, MOTEUR_DROIT); //-15
+            PWMSetSpeedConsigne(15, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_SUR_PLACE_DROITE_EN_COURS;
             break;
 
@@ -143,10 +144,10 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_RALENTI:
-            md =-15;
-            mg=15;
-            //PWMSetSpeedConsigne(-15, MOTEUR_DROIT); //15
-            //PWMSetSpeedConsigne(15, MOTEUR_GAUCHE);
+            robotState.moteur_droit =-15;
+            robotState.moteur_gauche=15;
+            PWMSetSpeedConsigne(-15, MOTEUR_DROIT); //15
+            PWMSetSpeedConsigne(15, MOTEUR_GAUCHE);
             stateRobot = STATE_RALENTI_EN_COURS;
             break;
 
@@ -155,10 +156,10 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_TOURNE_UN_PEU_GAUCHE:
-            md=-10;
-            mg =20;
-            //PWMSetSpeedConsigne(-10, MOTEUR_DROIT); //10
-            //PWMSetSpeedConsigne(20, MOTEUR_GAUCHE);
+            robotState.moteur_droit=-10;
+            robotState.moteur_gauche =20;
+            PWMSetSpeedConsigne(-10, MOTEUR_DROIT); //10
+            PWMSetSpeedConsigne(20, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_UN_PEU_GAUCHE_EN_COURS;
             break;
 
@@ -167,8 +168,8 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_TOURNE_UN_PEU_DROITE:
-            md = -20;
-            mg = 10;
+           robotState.moteur_droit = -20;
+            robotState.moteur_gauche = 10;
             PWMSetSpeedConsigne(-20, MOTEUR_DROIT); //20
             PWMSetSpeedConsigne(10, MOTEUR_GAUCHE);
             stateRobot = STATE_TOURNE_UN_PEU_DROITE_EN_COURS;
@@ -179,10 +180,10 @@ void OperatingSystemLoop(void) {
             break;
 
         case STATE_RECULE:
-            md =10;
-            mg=-10;
-            //PWMSetSpeedConsigne(10, MOTEUR_DROIT); //-10
-            //PWMSetSpeedConsigne(-10, MOTEUR_GAUCHE);
+            robotState.moteur_droit =10;
+            robotState.moteur_gauche=-10;
+            PWMSetSpeedConsigne(10, MOTEUR_DROIT); //-10
+            PWMSetSpeedConsigne(-10, MOTEUR_GAUCHE);
             stateRobot = STATE_RECULE_EN_COURS;
             break;
 
@@ -192,22 +193,13 @@ void OperatingSystemLoop(void) {
             break;
 
         default:
-            mg=0;
-            md =0;
+            robotState.moteur_droit=0;
+            robotState.moteur_gauche =0;
             SetNextRobotStateInAutomaticMode();
             break;
     }
     
-        PWMSetSpeedConsigne(md, MOTEUR_DROIT); //-10
-        PWMSetSpeedConsigne(mg, MOTEUR_GAUCHE);
 
-        
-            unsigned char payloadm [2];
-            payloadm [0] = (char) (md);
-            payloadm [1] = (char) (mg);
-           
-            int size2 = sizeof (payloadm);
-            UartEncodeAndSendMessage(0x0040, size2, payloadm);
         
 }
 

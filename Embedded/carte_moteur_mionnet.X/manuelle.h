@@ -1,18 +1,13 @@
-/* 
- * File:   manuelle.h
- * Author: TP-EO-5
- *
- * Created on 21 juin 2021, 15:49
- */
-
 #ifndef MANUELLE_H
 #define	MANUELLE_H
 
 
 
-void commande_manuelle (int function, int payloadLength, unsigned char * payload)
+void commande_manuelle (int function, int payloadLength, unsigned char * payload);
+#define attente 0
+#define SET_ROBOT_STATE 1
+#define led 2
+void manuelle(int function, int payloadLength, unsigned char * payload);
 
-
-
-#endif	/* MANUELLE_H */
+#endif
 

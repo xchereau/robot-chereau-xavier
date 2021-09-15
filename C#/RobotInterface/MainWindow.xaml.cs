@@ -347,6 +347,13 @@ namespace RobotInterface
             //textBoxReception.Text += "0x" + msgFunction.ToString("X4") + "\n";
             //textBoxReception.Text += msgPayloadLenght + "\n";
             
+             if(msgFunction == (int)FonctionId.dist)
+            {
+                IRGauche.Text = msgPayload[0]+"cm";
+                IRCentre.Text = msgPayload[1]+"cm";
+                IRDroit.Text = msgPayload[2]+"cm";
+            }
+
             if(msgFunction == (int)FonctionId.text)
             {
                 for (int i = 0; i < msgPayloadLenght; i++)

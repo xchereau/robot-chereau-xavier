@@ -14,6 +14,7 @@
 #include "CB_RX1.h"
 #include "UART_Protocol.h"
 #include "automatique.h"
+#include "manuelle.h"
 
 void manuelle(int function, int payloadLength, unsigned char * payload) {
     PWMSetSpeedConsigne(0, MOTEUR_DROIT);

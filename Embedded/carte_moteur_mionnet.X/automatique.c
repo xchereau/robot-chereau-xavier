@@ -17,11 +17,12 @@
 int subCounter = 0;
 
 void automatique() {
-    LED_ORANGE=0;
-    PWMSetSpeedConsigne(md, MOTEUR_DROIT);
-    PWMSetSpeedConsigne(mg, MOTEUR_GAUCHE);
+    
+//    PWMSetSpeedConsigne(md, MOTEUR_DROIT);
+//    PWMSetSpeedConsigne(mg, MOTEUR_GAUCHE);
     if (ADCIsConversionFinished() == 1) //Conversion des données en distance (cm)
     {
+        
         ADCClearConversionFinishedFlag();
         unsigned int * result = ADCGetResult();
         float volts = ((float) result[1]) * 3.3 / 4096 * 3.2;
@@ -64,6 +65,7 @@ void automatique() {
             SendMessage(&c, 1);
         }
         if (subCounter % 10 == 0) {
+            LED_BLEUE = 1;
             unsigned char payload [3];
             payload [0] = (char) (robotState.distanceTelemetreGauche);
             payload [1] = (char) (robotState.distanceTelemetreCentre);
