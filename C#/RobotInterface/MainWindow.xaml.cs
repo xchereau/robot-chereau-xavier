@@ -61,7 +61,8 @@ namespace RobotInterface
             robot.receivedText += Encoding.UTF8.GetString(e.Data, 0, e.Data.Length);
             for (int j = 0; j < e.Data.Length; j++)
             {
-                robot.byteListReceived.Enqueue(e.Data[j]);
+                DecodeMessage(e.Data[j]);
+                //robot.byteListReceived.Enqueue(e.Data[j]);
             }
         }
 
@@ -289,16 +290,14 @@ namespace RobotInterface
                     byte receivedChecksum = c;
                     if (calculatedChecksum == receivedChecksum)
                     {
-                        //textBoxReception.Text += "ouiiii!!!" + "\n";
-                        ProcessDecodeMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload);
-                        rcvState = StateReception.Waiting;
+                        Dispatcher.Invoke(delegate { ProcessDecodeMessage(msgDecodedFunction, msgDecodedPayloadLength, msgDecodedPayload); });                        
                     }
                     else
                     {
-                        textBoxReception.Text += "nooooon!!!!" + "\n";
-                        
+                        Dispatcher.Invoke(delegate { textBoxReception.Text += "nooooon!!!!" + "\n"; });
                     }
-                    
+                    rcvState = StateReception.Waiting;
+
                     break;
 
                 default:
@@ -352,6 +351,13 @@ namespace RobotInterface
                 IRGauche.Text = msgPayload[0]+"cm";
                 IRCentre.Text = msgPayload[1]+"cm";
                 IRDroit.Text = msgPayload[2]+"cm";
+            }
+
+             if(msgFunction == (int)FonctionId.vit)
+            {
+                textBoxmg.Text = msgPayload[0]+"%";
+                textBoxmd.Text = msgPayload[1]+"%";
+                
             }
 
             if(msgFunction == (int)FonctionId.text)

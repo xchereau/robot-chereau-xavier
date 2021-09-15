@@ -13,7 +13,7 @@
 #include "main.h"
 #include "CB_RX1.h"
 #include "automatique.h"
-
+#include "manuelle.h"
 unsigned char boucle;
 
 unsigned char UartCalculateChecksum(int msgFunction, int msgPayloadLength, unsigned char * msgPayload) {

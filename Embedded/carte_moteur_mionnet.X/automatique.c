@@ -65,7 +65,7 @@ void automatique() {
             SendMessage(&c, 1);
         }
         if (subCounter % 10 == 0) {
-            LED_BLEUE = 1;
+            
             unsigned char payload [3];
             payload [0] = (char) (robotState.distanceTelemetreGauche);
             payload [1] = (char) (robotState.distanceTelemetreCentre);
@@ -73,6 +73,13 @@ void automatique() {
             int size = sizeof (payload);
             UartEncodeAndSendMessage(0x0030, size, payload);
             
+            
+            unsigned char payload2 [2];
+            payload2 [0] = (char) (abs(robotState.moteur_gauche));
+            payload2 [1] = (char) (abs(robotState.moteur_droit));
+            
+            int size2 = sizeof (payload2);
+            UartEncodeAndSendMessage(0x0040, size2, payload2);
 
         }
         subCounter++;
