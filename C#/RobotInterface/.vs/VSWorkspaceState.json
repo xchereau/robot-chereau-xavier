@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Properties"
   ],
-  "SelectedNode": "\\RobotInterface.csproj",
+  "SelectedNode": "\\RobotInterface.sln",
   "PreviewInSolutionExplorer": false
 }

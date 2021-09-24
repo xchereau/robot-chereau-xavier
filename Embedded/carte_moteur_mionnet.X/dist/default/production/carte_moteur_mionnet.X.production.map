@@ -135,12 +135,12 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x5ae           0x885  (2181)
 .const                       0x7ae                 0x6             0x9  (9)
-.text                        0x7b4              0x13ec          0x1de2  (7650)
-.dinit                      0x1ba0                0x52            0x7b  (123)
-.text                       0x1bf2                0x30            0x48  (72)
-.init.delay32               0x1c22                0x1c            0x2a  (42)
+.text                        0x7b4              0x13f2          0x1deb  (7659)
+.dinit                      0x1ba6                0x52            0x7b  (123)
+.text                       0x1bf8                0x30            0x48  (72)
+.init.delay32               0x1c28                0x1c            0x2a  (42)
 
-                 Total "program" memory used (bytes):         0x275d  (10077) 1%
+                 Total "program" memory used (bytes):         0x2766  (10086) 1%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0xc000]
@@ -276,70 +276,70 @@ External Symbols in Program Memory (by address):
                   0x00150c                  _automatique
                   0x0016b4                  _manuelle
                   0x0016d4                  _commande_manuelle
-                  0x0017f6                  _Abs
-                  0x001822                  _Max
-                  0x001852                  _Min
-                  0x001882                  _LimitToInterval
-                  0x0018d4                  _RadianToDegree
-                  0x0018ec                  _DegreeToRadian
-                  0x001904                  _SendMessage
-                  0x00193c                  _CB_TX1_Add
-                  0x00195c                  _CB_TX1_Get
-                  0x00197c                  _SendOne
-                  0x00198e                  _CB_TX1_IsTranmitting
-                  0x001996                  _CB_TX1_GetDataSize
-                  0x0019b8                  _CB_TX1_RemainingSize
-                  0x0019c6                  _InitADC1
-                  0x001a3a                  _ADC1StartConversionSequence
-                  0x001a42                  _ADCGetResult
-                  0x001a4a                  _ADCIsConversionFinished
-                  0x001a52                  _ADCClearConversionFinishedFlag
-                  0x001a5a                  _CB_RX1_Add
-                  0x001a80                  _CB_RX1_Get
-                  0x001aa0                  _CB_RX1_IsDataAvailable
-                  0x001ab4                  _CB_RX1_GetRemainingSize
-                  0x001ac2                  _CB_RX1_GetDataSize
-                  0x001ae4                  _InitIO
-                  0x001b4a                  _InitOscillator
-                  0x001bf2                  _InitUART
-                  0x001c22                  ___delay32
+                  0x0017fc                  _Abs
+                  0x001828                  _Max
+                  0x001858                  _Min
+                  0x001888                  _LimitToInterval
+                  0x0018da                  _RadianToDegree
+                  0x0018f2                  _DegreeToRadian
+                  0x00190a                  _SendMessage
+                  0x001942                  _CB_TX1_Add
+                  0x001962                  _CB_TX1_Get
+                  0x001982                  _SendOne
+                  0x001994                  _CB_TX1_IsTranmitting
+                  0x00199c                  _CB_TX1_GetDataSize
+                  0x0019be                  _CB_TX1_RemainingSize
+                  0x0019cc                  _InitADC1
+                  0x001a40                  _ADC1StartConversionSequence
+                  0x001a48                  _ADCGetResult
+                  0x001a50                  _ADCIsConversionFinished
+                  0x001a58                  _ADCClearConversionFinishedFlag
+                  0x001a60                  _CB_RX1_Add
+                  0x001a86                  _CB_RX1_Get
+                  0x001aa6                  _CB_RX1_IsDataAvailable
+                  0x001aba                  _CB_RX1_GetRemainingSize
+                  0x001ac8                  _CB_RX1_GetDataSize
+                  0x001aea                  _InitIO
+                  0x001b50                  _InitOscillator
+                  0x001bf8                  _InitUART
+                  0x001c28                  ___delay32
                   0x0557fa                  __FGS.sec
 
 External Symbols in Program Memory (by name):
 
-                  0x001a3a                  _ADC1StartConversionSequence
-                  0x001a52                  _ADCClearConversionFinishedFlag
-                  0x001a42                  _ADCGetResult
-                  0x001a4a                  _ADCIsConversionFinished
-                  0x0017f6                  _Abs
-                  0x001a5a                  _CB_RX1_Add
-                  0x001a80                  _CB_RX1_Get
-                  0x001ac2                  _CB_RX1_GetDataSize
-                  0x001ab4                  _CB_RX1_GetRemainingSize
-                  0x001aa0                  _CB_RX1_IsDataAvailable
-                  0x00193c                  _CB_TX1_Add
-                  0x00195c                  _CB_TX1_Get
-                  0x001996                  _CB_TX1_GetDataSize
-                  0x00198e                  _CB_TX1_IsTranmitting
-                  0x0019b8                  _CB_TX1_RemainingSize
-                  0x0018ec                  _DegreeToRadian
-                  0x0019c6                  _InitADC1
-                  0x001ae4                  _InitIO
-                  0x001b4a                  _InitOscillator
+                  0x001a40                  _ADC1StartConversionSequence
+                  0x001a58                  _ADCClearConversionFinishedFlag
+                  0x001a48                  _ADCGetResult
+                  0x001a50                  _ADCIsConversionFinished
+                  0x0017fc                  _Abs
+                  0x001a60                  _CB_RX1_Add
+                  0x001a86                  _CB_RX1_Get
+                  0x001ac8                  _CB_RX1_GetDataSize
+                  0x001aba                  _CB_RX1_GetRemainingSize
+                  0x001aa6                  _CB_RX1_IsDataAvailable
+                  0x001942                  _CB_TX1_Add
+                  0x001962                  _CB_TX1_Get
+                  0x00199c                  _CB_TX1_GetDataSize
+                  0x001994                  _CB_TX1_IsTranmitting
+                  0x0019be                  _CB_TX1_RemainingSize
+                  0x0018f2                  _DegreeToRadian
+                  0x0019cc                  _InitADC1
+                  0x001aea                  _InitIO
+                  0x001b50                  _InitOscillator
                   0x001356                  _InitPWM
                   0x000efe                  _InitTimer1
                   0x000e96                  _InitTimer23
                   0x000ffc                  _InitTimer4
-                  0x001bf2                  _InitUART
-                  0x001882                  _LimitToInterval
-                  0x001822                  _Max
-                  0x001852                  _Min
+                  0x001bf8                  _InitUART
+                  0x001888                  _LimitToInterval
+                  0x001828                  _Max
+                  0x001858                  _Min
                   0x000802                  _OperatingSystemLoop
                   0x00138e                  _PWMSetSpeedConsigne
                   0x0013b6                  _PWMUpdateSpeed
-                  0x0018d4                  _RadianToDegree
-                  0x001904                  _SendMessage
-                  0x00197c                  _SendOne
+                  0x0018da                  _RadianToDegree
+                  0x00190a                  _SendMessage
+                  0x001982                  _SendOne
                   0x000f14                  _SetFreqTimer1
                   0x001012                  _SetFreqTimer4
                   0x000a12                  _SetNextRobotStateInAutomaticMode
@@ -358,7 +358,7 @@ External Symbols in Program Memory (by name):
                   0x00039a                  __U1RXInterrupt
                   0x000370                  __U1TXInterrupt
                   0x0003e6                  ___addsf3
-                  0x001c22                  ___delay32
+                  0x001c28                  ___delay32
                   0x0004a0                  ___divsf3
                   0x000524                  ___divsi3
                   0x000542                  ___eqsf2
@@ -560,7 +560,7 @@ __FOSCSEL
 
 __FGS             0x0557fa          0x2
  *(__FGS.sec*)
- __FGS.sec        0x0557fa          0x2 /CW/_FGS@ò2
+ __FGS.sec        0x0557fa          0x2 /CW/_FGSpò?
                   0x0557fa                  __FGS.sec
 
 __FUID0
@@ -2969,7 +2969,7 @@ LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-c-elf.a
 END GROUP
 OUTPUT(dist/default/production/carte_moteur_mionnet.X.production.elf elf32-pic30)
-LOAD /CW/_FGS@ò2
+LOAD /CW/_FGSpò?
 LOAD default_isr
 LOAD data_init
 
@@ -3174,7 +3174,7 @@ __c30_signature
 .const              0x87ae          0x6 load address 0x0007ae  
  .const             0x87ae          0x6 build/default/production/automatique.o
 
-.text             0x0007b4       0x13ec
+.text             0x0007b4       0x13f2
  .text            0x0007b4        0x6e2 build/default/production/main.o
                   0x0007b4                  _main
                   0x000802                  _OperatingSystemLoop
@@ -3198,48 +3198,48 @@ __c30_signature
                   0x0013b6                  _PWMUpdateSpeed
  .text            0x00150c        0x1a8 build/default/production/automatique.o
                   0x00150c                  _automatique
- .text            0x0016b4        0x142 build/default/production/manuelle.o
+ .text            0x0016b4        0x148 build/default/production/manuelle.o
                   0x0016b4                  _manuelle
                   0x0016d4                  _commande_manuelle
- .text            0x0017f6        0x10e build/default/production/Toolbox.o
-                  0x0017f6                  _Abs
-                  0x001822                  _Max
-                  0x001852                  _Min
-                  0x001882                  _LimitToInterval
-                  0x0018d4                  _RadianToDegree
-                  0x0018ec                  _DegreeToRadian
- .text            0x001904         0xc2 build/default/production/CB_TX1.o
-                  0x001904                  _SendMessage
-                  0x00193c                  _CB_TX1_Add
-                  0x00195c                  _CB_TX1_Get
-                  0x00197c                  _SendOne
-                  0x00198e                  _CB_TX1_IsTranmitting
-                  0x001996                  _CB_TX1_GetDataSize
-                  0x0019b8                  _CB_TX1_RemainingSize
- .text            0x0019c6         0x94 build/default/production/ADC.o
-                  0x0019c6                  _InitADC1
-                  0x001a3a                  _ADC1StartConversionSequence
-                  0x001a42                  _ADCGetResult
-                  0x001a4a                  _ADCIsConversionFinished
-                  0x001a52                  _ADCClearConversionFinishedFlag
- .text            0x001a5a         0x8a build/default/production/CB_RX1.o
-                  0x001a5a                  _CB_RX1_Add
-                  0x001a80                  _CB_RX1_Get
-                  0x001aa0                  _CB_RX1_IsDataAvailable
-                  0x001ab4                  _CB_RX1_GetRemainingSize
-                  0x001ac2                  _CB_RX1_GetDataSize
- .text            0x001ae4         0x66 build/default/production/IO.o
-                  0x001ae4                  _InitIO
- .text            0x001b4a         0x56 build/default/production/ChipConfig.o
-                  0x001b4a                  _InitOscillator
+ .text            0x0017fc        0x10e build/default/production/Toolbox.o
+                  0x0017fc                  _Abs
+                  0x001828                  _Max
+                  0x001858                  _Min
+                  0x001888                  _LimitToInterval
+                  0x0018da                  _RadianToDegree
+                  0x0018f2                  _DegreeToRadian
+ .text            0x00190a         0xc2 build/default/production/CB_TX1.o
+                  0x00190a                  _SendMessage
+                  0x001942                  _CB_TX1_Add
+                  0x001962                  _CB_TX1_Get
+                  0x001982                  _SendOne
+                  0x001994                  _CB_TX1_IsTranmitting
+                  0x00199c                  _CB_TX1_GetDataSize
+                  0x0019be                  _CB_TX1_RemainingSize
+ .text            0x0019cc         0x94 build/default/production/ADC.o
+                  0x0019cc                  _InitADC1
+                  0x001a40                  _ADC1StartConversionSequence
+                  0x001a48                  _ADCGetResult
+                  0x001a50                  _ADCIsConversionFinished
+                  0x001a58                  _ADCClearConversionFinishedFlag
+ .text            0x001a60         0x8a build/default/production/CB_RX1.o
+                  0x001a60                  _CB_RX1_Add
+                  0x001a86                  _CB_RX1_Get
+                  0x001aa6                  _CB_RX1_IsDataAvailable
+                  0x001aba                  _CB_RX1_GetRemainingSize
+                  0x001ac8                  _CB_RX1_GetDataSize
+ .text            0x001aea         0x66 build/default/production/IO.o
+                  0x001aea                  _InitIO
+ .text            0x001b50         0x56 build/default/production/ChipConfig.o
+                  0x001b50                  _InitOscillator
 
-.dinit            0x001ba0         0x52
- .dinit           0x001ba0         0x52 data_init
+.dinit            0x001ba6         0x52
+ .dinit           0x001ba6         0x52 data_init
 
-.text             0x001bf2         0x30
- .text            0x001bf2         0x30 build/default/production/UART.o
-                  0x001bf2                  _InitUART
+.text             0x001bf8         0x30
+ .text            0x001bf8         0x30 build/default/production/UART.o
+                  0x001bf8                  _InitUART
 
-.init.delay32     0x001c22         0x1c
- .init.delay32    0x001c22         0x1c c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(delay32ep.Leo)
-                  0x001c22                  ___delay32
+.init.delay32     0x001c28         0x1c
+ .init.delay32    0x001c28         0x1c c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-pic30-elf.a(delay32ep.Leo)
+                  0x001c28                  ___delay32

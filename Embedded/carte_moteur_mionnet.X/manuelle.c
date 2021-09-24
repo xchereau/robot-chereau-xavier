@@ -19,7 +19,6 @@
 void manuelle(int function, int payloadLength, unsigned char * payload) {
     PWMSetSpeedConsigne(0, MOTEUR_DROIT);
     PWMSetSpeedConsigne(0, MOTEUR_GAUCHE);
-    //LED_BLEUE = 1;
     commande_manuelle(function, payloadLength, payload);
 
 
@@ -27,16 +26,17 @@ void manuelle(int function, int payloadLength, unsigned char * payload) {
 
 void commande_manuelle(int function, int payloadLength, unsigned char * payload) {
 
-LED_BLEUE = 1;
+
     switch (function) {
         case attente:
-            function = payloadLength;
+            function = function;
+            
             break;
 
         case SET_ROBOT_STATE:
             if (payload[0]==0x08)
             {
-                LED_BLEUE = 1;
+                
             PWMSetSpeedConsigne(-20, MOTEUR_DROIT);
             PWMSetSpeedConsigne(-20, MOTEUR_GAUCHE);   
             }
