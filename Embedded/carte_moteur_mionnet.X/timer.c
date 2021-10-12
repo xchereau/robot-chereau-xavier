@@ -4,6 +4,7 @@
 #include "PWM.h"
 #include "ADC.h"
 #include "main.h"
+#include "QEI.h"
 
 unsigned long timestamp;
 //Initialisation d?un timer 32 bits
@@ -71,6 +72,7 @@ void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     PWMUpdateSpeed();
     ADC1StartConversionSequence();
     //QEIUpdateData ();
+    QEIUpdateData ();
 }
 
 void SetFreqTimer1(float freq)

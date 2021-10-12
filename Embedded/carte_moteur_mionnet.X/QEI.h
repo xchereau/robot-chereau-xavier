@@ -6,8 +6,9 @@
 extern "C" {
 #endif
 
-
-
+void InitQEI2 (void) ;
+void InitQEI1 (void);
+void QEIUpdateData (void);
 
 #ifdef	__cplusplus
 }
