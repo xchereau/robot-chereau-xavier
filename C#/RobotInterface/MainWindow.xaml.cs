@@ -364,9 +364,10 @@ namespace RobotInterface
 
             if(msgFunction == (int)FonctionId.position)
             {
-                textBoxReception.Text = msgPayload[0]+"x pos";
-                textBoxReception.Text += msgPayload[8] + "x pos";
-                textBoxReception.Text += msgPayload[16] + "x pos";
+                byte[] tab;
+                tab = msgPayload.GetRange(offset, 4);
+                robot.positionXodometry += tab.GetFloat;
+              
                 //textBoxReception.Text = msgPayload[24] + "x pos/n";
             }
 

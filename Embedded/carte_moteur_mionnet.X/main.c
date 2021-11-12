@@ -29,6 +29,8 @@ int main(void) {
     InitTimer4();
     InitUART();
     automatique();
+    InitQEI1 ();
+    InitQEI2() ;
 
     
 

@@ -80,13 +80,14 @@ void QEIUpdateData ()
     robotState.angleRadianFromOdometry_1 = robotState.angleRadianFromOdometry ;
     
 // Calcul des positions dans le referentiel du terrain
-    robotState.xPosFromOdometry += cos (robotState.angleRadianFromOdometry) * dx ;
-    robotState.yPosFromOdometry += sin (robotState.angleRadianFromOdometry) * dx ;
-    robotState.angleRadianFromOdometry += delta_theta ;
+    robotState.xPosFromOdometry = robotState.xPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry / FREQ_ECH_QEI * cos(robotState.angleRadianFromOdometry_1);
+    robotState.yPosFromOdometry = robotState.yPosFromOdometry_1 + robotState.vitesseLineaireFromOdometry / FREQ_ECH_QEI * sin(robotState.angleRadianFromOdometry_1);
+    robotState.angleRadianFromOdometry = robotState.angleRadianFromOdometry_1 + delta_theta ;
     if ( robotState.angleRadianFromOdometry > PI )
     robotState.angleRadianFromOdometry -= 2*PI ;
     if ( robotState.angleRadianFromOdometry < -PI )
     robotState.angleRadianFromOdometry += 2*PI ;
+    
 }
 
 void SendPositionData()
