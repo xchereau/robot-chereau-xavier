@@ -313,7 +313,8 @@ namespace RobotInterface
             led = 0x0020,
             dist = 0x0030,
             vit = 0x0040,
-            etat = 0x0050
+            etat = 0x0050,
+            position = 0x0061,
         }
 
         private enum StateRobot
@@ -359,6 +360,14 @@ namespace RobotInterface
                 textBoxmg.Text = msgPayload[0]+"%";
                 textBoxmd.Text = msgPayload[1]+"%";
                 
+            }
+
+            if(msgFunction == (int)FonctionId.position)
+            {
+                textBoxReception.Text = msgPayload[0]+"x pos";
+                textBoxReception.Text += msgPayload[8] + "x pos";
+                textBoxReception.Text += msgPayload[16] + "x pos";
+                //textBoxReception.Text = msgPayload[24] + "x pos/n";
             }
 
             if(msgFunction == (int)FonctionId.text)

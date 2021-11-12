@@ -41,6 +41,7 @@ double LimitToInterval(double value, double min, double max)
 }
 
  */
+
 double Modulo2PIAngleRadian(double angleRadian) {
     double angleTemp = fmod(angleRadian - PI, 2 * PI) + PI;
     return fmod(angleTemp + PI, 2 * PI) - PI;

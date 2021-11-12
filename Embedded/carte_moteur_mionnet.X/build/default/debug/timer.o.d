@@ -1,5 +1,5 @@
 build/default/debug/timer.o: timer.c timer.h IO.h PWM.h ADC.h main.h \
- QEI.h
+ QEI.h Utilities.h UART_Protocol.h CB_TX1.h
 
 timer.h:
 
@@ -12,3 +12,9 @@ ADC.h:
 main.h:
 
 QEI.h:
+
+Utilities.h:
+
+UART_Protocol.h:
+
+CB_TX1.h:

@@ -30,6 +30,8 @@ int main(void) {
     InitUART();
     automatique();
 
+    
+
 
     while (1) {
         

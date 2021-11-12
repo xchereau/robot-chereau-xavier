@@ -5,6 +5,9 @@
 #include "ADC.h"
 #include "main.h"
 #include "QEI.h"
+#include "Utilities.h"
+#include "UART_Protocol.h"
+#include "CB_TX1.h"
 
 unsigned long timestamp;
 //Initialisation d?un timer 32 bits
@@ -68,11 +71,12 @@ void InitTimer1(void) {
 
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     IFS0bits.T1IF = 0;
-    //LED_BLEUE = !LED_BLEUE;
     PWMUpdateSpeed();
     ADC1StartConversionSequence();
     //QEIUpdateData ();
     QEIUpdateData ();
+    
+    SendPositionData();
 }
 
 void SetFreqTimer1(float freq)
