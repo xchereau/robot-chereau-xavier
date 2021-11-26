@@ -53,3 +53,5 @@ C:\GitHub\robot-chereau-xavier\C#\RobotInterface\obj\Debug\RobotInterface.csproj
 C:\GitHub\robot-chereau-xavier\C#\RobotInterface\obj\Debug\RobotInterface.csproj.CopyComplete
 C:\GitHub\robot-chereau-xavier\C#\RobotInterface\obj\Debug\RobotInterface.exe
 C:\GitHub\robot-chereau-xavier\C#\RobotInterface\obj\Debug\RobotInterface.pdb
+C:\GitHub\robot-chereau-xavier\C#\RobotInterface\bin\Debug\Utilities.dll
+C:\GitHub\robot-chereau-xavier\C#\RobotInterface\bin\Debug\Utilities.pdb

@@ -19,6 +19,7 @@ using System.Windows.Threading;
 using System.Windows.Forms;
 using MouseKeyboardActivityMonitor.WinApi;
 using MouseKeyboardActivityMonitor;
+using Utilities;
 
 namespace RobotInterface
 {
@@ -365,13 +366,26 @@ namespace RobotInterface
             if(msgFunction == (int)FonctionId.position)
             {
                 byte[] tab;
-                tab = msgPayload.GetRange(offset, 4);
-                robot.positionXodometry += tab.GetFloat;
-              
+
+                tab = msgPayload.GetRange(0, 3);
+                robot.timestamp += tab.GetFloat();
+
+                tab = msgPayload.GetRange(4, 7);
+                robot.positionXodometry += tab.GetFloat();
+                
+                
+                tab = msgPayload.GetRange(8, 11);
+                robot.positionYodometry += tab.GetFloat();
+
+                textBoxReception.Text += robot.timestamp+ "s\n";
+                //textBoxReception.Text += "en x "+ robot.positionXodometry + "m\n";
+                //textBoxReception.Text += "en y " + robot.positionYodometry + "m\n";
+
+
                 //textBoxReception.Text = msgPayload[24] + "x pos/n";
             }
 
-            if(msgFunction == (int)FonctionId.text)
+            if (msgFunction == (int)FonctionId.text)
             {
                 for (int i = 0; i < msgPayloadLenght; i++)
                 {
@@ -382,17 +396,14 @@ namespace RobotInterface
 
             if (msgFunction == (int)FonctionId.etat)
             {
-                //textBoxReception.Text += msgPayload[0] + "\n";
+                
 
                 RBTrecept.Text = "";
                 int instant = (( (int)msgPayload[1]) << 24) + (( (int)msgPayload[2]) << 16) + (( (int)msgPayload[3]) << 8) + ( (int)msgPayload[4]);
                 RBTrecept.Text += "Robot State : " + ((StateRobot)(msgPayload[0])).ToString() + "−" + instant.ToString() + " ms";
 
 
-//                for (int i = 1; i < msgPayloadLenght; i++)
-//                {
-//                    textBoxReception.Text += msgPayload[i];
-//                }
+//                
                 
             }
         }

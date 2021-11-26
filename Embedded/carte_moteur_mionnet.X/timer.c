@@ -68,15 +68,18 @@ void InitTimer1(void) {
 }
 
 //Interruption du timer 1
-
+int l=0;
 void __attribute__((interrupt, no_auto_psv)) _T1Interrupt(void) {
     IFS0bits.T1IF = 0;
     PWMUpdateSpeed();
     ADC1StartConversionSequence();
     //QEIUpdateData ();
     QEIUpdateData ();
+    l=l+1;
+     if (l%25 == 0){
+        SendPositionData();
+    }
     
-    SendPositionData();
 }
 
 void SetFreqTimer1(float freq)

@@ -26,6 +26,7 @@ typedef struct robotStateBITS {
             float moteur_gauche; 
             float moteur_droit;
             
+            
             boolean isAutoControl;
             float isfunction;
             float ispayloadLength;
