@@ -386,12 +386,12 @@ namespace RobotInterface
                 tab = msgPayload.GetRange(16, 4);
                 robot.vitesseangulaire = tab.GetFloat();
 
-                textBoxReception.Text = "Temps: " + robot.timestamp.ToString() + " ms\n";
-                textBoxReception.Text += "en x "+ robot.positionXodometry + "m\n";
-                textBoxReception.Text += "en y "+ robot.positionYodometry + "m\n";
-                textBoxReception.Text += "\nangle " + robot.angle_radian+ "rad\n";
-                textBoxReception.Text += "vitesse " + robot.vitesselineaire + "m/s\n";
-                textBoxReception.Text += "vitesse angulaire " + robot.vitesseangulaire + "m/s\n";
+                textBoxReception.Text = robot.timestamp.ToString() + " ms";
+                xodometrie.Text = robot.positionXodometry + "m";
+                yodometrie.Text = robot.positionYodometry + "m";
+                angles.Text =  robot.angle_radian+ "rad";
+                speed_bot.Text = robot.vitesselineaire + "m/s";
+                speed_ang.Text = robot.vitesseangulaire + "m/s";
 
                 //textBoxReception.Text = msgPayload[24] + "x pos/n";
             }
