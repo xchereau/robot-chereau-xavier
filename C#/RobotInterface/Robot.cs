@@ -15,6 +15,9 @@ namespace RobotInterface
         public float positionXodometry;
         public float positionYodometry;
         public float timestamp;
+        public float angle_radian;
+        public float vitesselineaire;
+        public float vitesseangulaire;
         public Queue<byte> byteListReceived = new Queue<byte>();
 
         public Robot()

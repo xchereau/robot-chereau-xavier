@@ -18,10 +18,14 @@
 #include "manuelle.h"
 #include "Utilities.h"
 
+#define PI 3.1415
 #define POSITION_DATA 0x0061
 #define FREQ_ECH_QEI 250
-#define DISTROUES 281.2
-#define PI 3.1415
+#define DISTROUES 0.2182
+#define NUMBER_OF_POINTS 8192
+#define POINT_TO_METER 0.000016336 //(wheel diameter * PI/ NUMBER_OF_POINTS)
+
+// Point to meter = (dist_roue * pi) / nombre de points codeur
 
 
 void InitQEI1 ()
@@ -56,8 +60,8 @@ void QEIUpdateData ()
     QEI2RawValue += ((long)POS2HLD<<16);
     
 // Conversion en mm ( r\?egl\?e pour la taille des roue scodeuses )
-    double QeiDroitPosition = 0.01620 * QEI1RawValue ;
-    double QeiGauchePosition = -0.01620 * QEI2RawValue ;
+    QeiDroitPosition = POINT_TO_METER * QEI1RawValue ;
+     QeiGauchePosition = -POINT_TO_METER * QEI2RawValue ;
     
 // Calcul des deltas de position
     double delta_d = QeiDroitPosition - QeiDroitPosition_T_1 ;
@@ -69,12 +73,12 @@ void QEIUpdateData ()
     
 // Calcul des vitesses
 //attention à remultiplier par la fréquence d'échantillonnage
-    robotState.vitesseDroitFromOdometry = delta_d * FREQ_ECH_QEI;
-    robotState.vitesseGaucheFromOdometry = delta_g * FREQ_ECH_QEI;
+    robotState.vitesseDroitFromOdometry =  delta_d * FREQ_ECH_QEI;
+    robotState.vitesseGaucheFromOdometry =  delta_g * FREQ_ECH_QEI;
     robotState.vitesseLineaireFromOdometry = (robotState.vitesseDroitFromOdometry + robotState.vitesseGaucheFromOdometry ) / 2 ;
     robotState.vitesseAngulaireFromOdometry = delta_theta * FREQ_ECH_QEI;
     
-//Mise à jour du positionnement terrain à t?1
+//Mise à jour du positionnement terrain à t-1
     robotState.xPosFromOdometry_1 = robotState.xPosFromOdometry ;
     robotState.yPosFromOdometry_1 = robotState.yPosFromOdometry ;
     robotState.angleRadianFromOdometry_1 = robotState.angleRadianFromOdometry ;

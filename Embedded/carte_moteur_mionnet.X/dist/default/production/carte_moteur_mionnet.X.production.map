@@ -620,7 +620,7 @@ __FOSCSEL
 
 __FGS             0x0557fa          0x2
  *(__FGS.sec*)
- __FGS.sec        0x0557fa          0x2 /CW/_FGS@¦J
+ __FGS.sec        0x0557fa          0x2 /CW/_FGSÀ&E
                   0x0557fa                  __FGS.sec
 
 __FUID0
@@ -638,7 +638,7 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x887b
+.debug_info       0x000000       0x885f
  *(.debug_info)
  .debug_info      0x000000        0x699 build/default/production/main.o
  .debug_info      0x000699        0x541 build/default/production/ChipConfig.o
@@ -654,11 +654,11 @@ __FUID3
  .debug_info      0x0065e5        0x846 build/default/production/UART_Protocol.o
  .debug_info      0x006e2b        0x62a build/default/production/automatique.o
  .debug_info      0x007455        0x41e build/default/production/manuelle.o
- .debug_info      0x007873        0xc6c build/default/production/QEI.o
- .debug_info      0x0084df        0x39c build/default/production/Utilities.o
+ .debug_info      0x007873        0xc50 build/default/production/QEI.o
+ .debug_info      0x0084c3        0x39c build/default/production/Utilities.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000       0x108f
+.debug_abbrev     0x000000       0x1080
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x138 build/default/production/main.o
  .debug_abbrev    0x000138         0xc3 build/default/production/ChipConfig.o
@@ -674,8 +674,8 @@ __FUID3
  .debug_abbrev    0x000b5f        0x165 build/default/production/UART_Protocol.o
  .debug_abbrev    0x000cc4        0x108 build/default/production/automatique.o
  .debug_abbrev    0x000dcc         0xb3 build/default/production/manuelle.o
- .debug_abbrev    0x000e7f        0x167 build/default/production/QEI.o
- .debug_abbrev    0x000fe6         0xa9 build/default/production/Utilities.o
+ .debug_abbrev    0x000e7f        0x158 build/default/production/QEI.o
+ .debug_abbrev    0x000fd7         0xa9 build/default/production/Utilities.o
 
 .debug_line       0x000000        0xf3e
  *(.debug_line)
@@ -3044,7 +3044,7 @@ LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\libm-elf.a
 LOAD c:/program files/microchip/xc16/v1.60/bin/bin/../../lib\liblega-c-elf.a
 END GROUP
 OUTPUT(dist/default/production/carte_moteur_mionnet.X.production.elf elf32-pic30)
-LOAD /CW/_FGS@¦J
+LOAD /CW/_FGSÀ&E
 LOAD default_isr
 LOAD data_init
 

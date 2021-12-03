@@ -367,20 +367,31 @@ namespace RobotInterface
             {
                 byte[] tab;
 
-                tab = msgPayload.GetRange(0, 3);
-                robot.timestamp += tab.GetFloat();
+                tab = msgPayload.GetRange(0, 4);
+                robot.timestamp =(((int)tab[0]) << 24) + (((int)tab[1]) << 16) + (((int)tab[2]) << 8) + (((int)tab[3]));
 
-                tab = msgPayload.GetRange(4, 7);
-                robot.positionXodometry += tab.GetFloat();
+                tab = msgPayload.GetRange(4, 4);
+                robot.positionXodometry = tab.GetFloat();
                 
                 
-                tab = msgPayload.GetRange(8, 11);
-                robot.positionYodometry += tab.GetFloat();
+                tab = msgPayload.GetRange(8, 4);
+                robot.positionYodometry = tab.GetFloat();
 
-                textBoxReception.Text += robot.timestamp+ "s\n";
-                //textBoxReception.Text += "en x "+ robot.positionXodometry + "m\n";
-                //textBoxReception.Text += "en y " + robot.positionYodometry + "m\n";
+                tab = msgPayload.GetRange(12, 4);
+                robot.angle_radian = tab.GetFloat();
 
+                tab = msgPayload.GetRange(16, 4);
+                robot.vitesselineaire = tab.GetFloat();
+
+                tab = msgPayload.GetRange(16, 4);
+                robot.vitesseangulaire = tab.GetFloat();
+
+                textBoxReception.Text = "Temps: " + robot.timestamp.ToString() + " ms\n";
+                textBoxReception.Text += "en x "+ robot.positionXodometry + "m\n";
+                textBoxReception.Text += "en y "+ robot.positionYodometry + "m\n";
+                textBoxReception.Text += "\nangle " + robot.angle_radian+ "rad\n";
+                textBoxReception.Text += "vitesse " + robot.vitesselineaire + "m/s\n";
+                textBoxReception.Text += "vitesse angulaire " + robot.vitesseangulaire + "m/s\n";
 
                 //textBoxReception.Text = msgPayload[24] + "x pos/n";
             }
