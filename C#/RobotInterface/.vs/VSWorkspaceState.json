@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Properties"
+    "\\bin",
+    "\\packages"
   ],
-  "SelectedNode": "\\RobotInterface.sln",
+  "SelectedNode": "\\packages\\SciChart.5.4.0.12119",
   "PreviewInSolutionExplorer": false
 }

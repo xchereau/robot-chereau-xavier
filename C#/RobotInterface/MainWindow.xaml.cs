@@ -20,6 +20,7 @@ using System.Windows.Forms;
 using MouseKeyboardActivityMonitor.WinApi;
 using MouseKeyboardActivityMonitor;
 using Utilities;
+using WpfAsservissementDisplay;
 
 namespace RobotInterface
 {

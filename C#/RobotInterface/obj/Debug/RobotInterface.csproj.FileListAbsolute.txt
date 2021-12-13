@@ -55,3 +55,7 @@ C:\GitHub\robot-chereau-xavier\C#\RobotInterface\obj\Debug\RobotInterface.exe
 C:\GitHub\robot-chereau-xavier\C#\RobotInterface\obj\Debug\RobotInterface.pdb
 C:\GitHub\robot-chereau-xavier\C#\RobotInterface\bin\Debug\Utilities.dll
 C:\GitHub\robot-chereau-xavier\C#\RobotInterface\bin\Debug\Utilities.pdb
+C:\GitHub\robot-chereau-xavier\C#\RobotInterface\bin\Debug\Constants.dll
+C:\GitHub\robot-chereau-xavier\C#\RobotInterface\bin\Debug\WpfAsservissementDisplay.dll
+C:\GitHub\robot-chereau-xavier\C#\RobotInterface\bin\Debug\Constants.pdb
+C:\GitHub\robot-chereau-xavier\C#\RobotInterface\bin\Debug\WpfAsservissementDisplay.pdb
