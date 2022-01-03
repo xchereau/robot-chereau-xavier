@@ -395,6 +395,7 @@ namespace RobotInterface
                 speed_ang.Text = robot.vitesseangulaire + "m/s";
 
                 //textBoxReception.Text = msgPayload[24] + "x pos/n";
+
             }
 
             if (msgFunction == (int)FonctionId.text)

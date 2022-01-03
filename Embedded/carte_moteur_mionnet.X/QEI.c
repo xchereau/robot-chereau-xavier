@@ -94,16 +94,130 @@ void QEIUpdateData ()
     
 }
 
+//consigne 
+double consigneX = 0.01;
+double consigneTheta = 0.02;
+//double consigneM1 = 0.03;
+//double consigneM2 = 0.04;
+
+//Measure
+double measureX = 0.05;
+double measureTheta = 0.06;
+//double measureM1 = 0.07;
+//double measureM2 = 0.08;
+
+//Error
+double ErrorX = 0.09;
+double ErrorTheta = 0.1;
+//double ErrorM1 = 0.11;
+//double ErrorM2 = 0.12; 
+
+//Command
+double commandX = 0.13;
+double commandTheta = 0.14;
+//double commandM1 = 0.15;
+//double commandM2 = 0.16;
+
+//KP
+double KpX = 0.17;
+double KpTheta = 0.18;
+//double KpM1 = 0.19;
+//double KpM2 = 0.2;
+
+//Correction P
+double CoPX = 0.21;
+double CoPTheta = 0.22;
+//double CoPM1 = 0.23;
+//double CopM2 = 024;
+
+//Corr P Max
+double CorrPMaxX = 0.25;
+double CorrPMaxTheta = 0.26;
+//double CorrPMaxM1 = 0.27;
+//double CorrPMaxM2 = 0.28;
+
+//KI
+double KiMax = 0.29;
+double KiTheta = 0.3;
+//double KiM1 = 0.31;
+//double KiM2 = 0.32;
+
+//Correction I
+double CoIX = 0.33;
+double CoITheta = 0.34;
+//double CoIM1 = 0.35;
+//double CoIM2 =0.36;
+
+//Corr I Max
+double CorrIMaxX = 0.37;
+double CorrIMaxTheta = 0.38;
+//double CorrIMaxM1 = 0.39;
+//double CorrIMaxM2 = 0.4;
+
+//KD
+double KdMax = 0.41;
+double KdTheta = 0.42;
+//double KdM1 = 0.43;
+//double KdM2 = 0.44;
+
+//Correction D
+double CoDX = 0.45;
+double CoDTheta = 0.46;
+//double CoDM1 = 0.47;
+//double CoDM2 = 0.48;
+
+//Corr D Max
+double CorrDMaxX = 0.49;
+double CorrDMaxTheta = 0.5;
+//double CorrDMaxM1 = 0.51;
+//double CorrDMaxM2 = 0.52;
+
+
+
 void SendPositionData()
 {
     
-unsigned char positionPayload [24] ;
-getBytesFromInt32 ( positionPayload,0 , timestamp ) ;
-getBytesFromFloat ( positionPayload , 4 , ( float ) ( robotState. xPosFromOdometry ) ) ;
-getBytesFromFloat ( positionPayload ,8 , ( float) ( robotState.yPosFromOdometry ) ) ;
-getBytesFromFloat ( positionPayload , 12 , ( float ) ( robotState.angleRadianFromOdometry ) ) ;
-getBytesFromFloat ( positionPayload , 16 , ( float ) ( robotState . vitesseLineaireFromOdometry ) ) ;
-getBytesFromFloat ( positionPayload , 20 , ( float ) ( robotState.vitesseAngulaireFromOdometry ) ) ;
-UartEncodeAndSendMessage (POSITION_DATA, 24 , positionPayload) ;
+    
+    unsigned char positionPayload [24] ;
+    getBytesFromInt32 ( positionPayload,0 , timestamp ) ;
+    getBytesFromFloat ( positionPayload , 4 , ( float ) ( robotState. xPosFromOdometry ) ) ;
+    getBytesFromFloat ( positionPayload ,8 , ( float) ( robotState.yPosFromOdometry ) ) ;
+    getBytesFromFloat ( positionPayload , 12 , ( float ) ( robotState.angleRadianFromOdometry ) ) ;
+    getBytesFromFloat ( positionPayload , 16 , ( float ) ( robotState . vitesseLineaireFromOdometry ) ) ;
+    getBytesFromFloat ( positionPayload , 20 , ( float ) ( robotState.vitesseAngulaireFromOdometry ) ) ;
+    UartEncodeAndSendMessage (POSITION_DATA, 24 , positionPayload) ;
+    
+    unsigned char positionPayload1 [104] ;
+    getBytesFromInt32 ( positionPayload1, 0, consigneX) ;
+    getBytesFromFloat ( positionPayload1, 4, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 8, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 12, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 16, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 20, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 24, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 28, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 32, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 36, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 40, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 44, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 48, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 52, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 56, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 60, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 64, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 68, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 72, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 76, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 80, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 84, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 88, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 92, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 96, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 100, ( float ) ( consigneX )) ;
+    
+    
+    UartEncodeAndSendMessage (POSITION_DATA, 104 , positionPayload1) ;
+    
+    
 
 }
