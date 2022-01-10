@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using Constants;
 using Utilities;
+//using RobotInterface;
 
 namespace WpfAsservissementDisplay
 {

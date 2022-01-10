@@ -18,6 +18,7 @@ namespace RobotInterface
         public float angle_radian;
         public float vitesselineaire;
         public float vitesseangulaire;
+
         public Queue<byte> byteListReceived = new Queue<byte>();
 
         public Robot()

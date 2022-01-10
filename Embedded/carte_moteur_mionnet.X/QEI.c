@@ -178,20 +178,20 @@ void SendPositionData()
 {
     
     
-    unsigned char positionPayload [24] ;
-    getBytesFromInt32 ( positionPayload,0 , timestamp ) ;
-    getBytesFromFloat ( positionPayload , 4 , ( float ) ( robotState. xPosFromOdometry ) ) ;
-    getBytesFromFloat ( positionPayload ,8 , ( float) ( robotState.yPosFromOdometry ) ) ;
-    getBytesFromFloat ( positionPayload , 12 , ( float ) ( robotState.angleRadianFromOdometry ) ) ;
-    getBytesFromFloat ( positionPayload , 16 , ( float ) ( robotState . vitesseLineaireFromOdometry ) ) ;
-    getBytesFromFloat ( positionPayload , 20 , ( float ) ( robotState.vitesseAngulaireFromOdometry ) ) ;
-    UartEncodeAndSendMessage (POSITION_DATA, 24 , positionPayload) ;
-    
+//    unsigned char positionPayload [24] ;
+//    getBytesFromInt32 ( positionPayload,0 , timestamp ) ;
+//    getBytesFromFloat ( positionPayload , 4 , ( float ) ( robotState. xPosFromOdometry ) ) ;
+//    getBytesFromFloat ( positionPayload ,8 , ( float) ( robotState.yPosFromOdometry ) ) ;
+//    getBytesFromFloat ( positionPayload , 12 , ( float ) ( robotState.angleRadianFromOdometry ) ) ;
+//    getBytesFromFloat ( positionPayload , 16 , ( float ) ( robotState . vitesseLineaireFromOdometry ) ) ;
+//    getBytesFromFloat ( positionPayload , 20 , ( float ) ( robotState.vitesseAngulaireFromOdometry ) ) ;
+//    UartEncodeAndSendMessage (POSITION_DATA, 24 , positionPayload) ;
+   
     unsigned char positionPayload1 [104] ;
-    getBytesFromInt32 ( positionPayload1, 0, consigneX) ;
-    getBytesFromFloat ( positionPayload1, 4, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 8, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 12, ( float ) ( consigneX )) ;
+    getBytesFromInt32 ( positionPayload1, 0, timestamp) ;
+    getBytesFromFloat ( positionPayload1, 4, ( float ) ( 1.2 )) ;
+    getBytesFromFloat ( positionPayload1, 8, ( float ) ( 2.5 )) ;
+    getBytesFromFloat ( positionPayload1, 12, ( float ) ( 6.8 )) ;
     getBytesFromFloat ( positionPayload1, 16, ( float ) ( consigneX )) ;
     getBytesFromFloat ( positionPayload1, 20, ( float ) ( consigneX )) ;
     getBytesFromFloat ( positionPayload1, 24, ( float ) ( consigneX )) ;
@@ -214,7 +214,7 @@ void SendPositionData()
     getBytesFromFloat ( positionPayload1, 92, ( float ) ( consigneX )) ;
     getBytesFromFloat ( positionPayload1, 96, ( float ) ( consigneX )) ;
     getBytesFromFloat ( positionPayload1, 100, ( float ) ( consigneX )) ;
-    
+
     
     UartEncodeAndSendMessage (POSITION_DATA, 104 , positionPayload1) ;
     

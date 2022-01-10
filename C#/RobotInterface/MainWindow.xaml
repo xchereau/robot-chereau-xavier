@@ -184,7 +184,7 @@
                 </StackPanel>
             </GroupBox>
             <GroupBox Background="#FF000000" x:Name ="asserv"  Header="asservissement" BorderBrush=" #FF000000" Grid.Column="1" ScrollViewer.CanContentScroll="True" Margin="5,10,5,10">
-                <AsservDisplay1:AsservissementRobot2RouesDisplayControl x:Name="asservSpeedDisplay" />
+                <AsservDisplay1:AsservissementRobot2RouesDisplayControl x:Name="asservSpeedDisplay" Loaded="asservSpeedDisplay_Loaded" />
 
             </GroupBox>
 

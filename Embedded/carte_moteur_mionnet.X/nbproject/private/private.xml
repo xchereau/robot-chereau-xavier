@@ -7,7 +7,12 @@
             <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/QEI.c</file>
             <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/ChipConfig.c</file>
             <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/timer.c</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/CB_TX1.c</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/IO.c</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/UART_Protocol.c</file>
             <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/QEI.h</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/CB_TX1.h</file>
+            <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/Robot.c</file>
             <file>file:/C:/GitHub/robot-chereau-xavier/Embedded/carte_moteur_mionnet.X/timer.h</file>
         </group>
     </open-files>

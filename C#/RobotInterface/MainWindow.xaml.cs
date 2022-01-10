@@ -313,10 +313,12 @@ namespace RobotInterface
         {
             text = 0x0080,
             led = 0x0020,
+            position_tab = 0x0104,
             dist = 0x0030,
             vit = 0x0040,
             etat = 0x0050,
             position = 0x0061,
+            
         }
 
         private enum StateRobot
@@ -349,7 +351,81 @@ namespace RobotInterface
         {
             //textBoxReception.Text += "0x" + msgFunction.ToString("X4") + "\n";
             //textBoxReception.Text += msgPayloadLenght + "\n";
-            
+
+            if (msgFunction == (int)FonctionId.position)
+            {
+                
+                int pos = 0;
+                //tab = msgPayload.GetRange(r, 4);
+                if(BitConverter.IsLittleEndian)
+                {
+                    Array.Reverse(msgPayload, pos, 4);
+                }
+                var timestamp = BitConverter.ToInt32(msgPayload, pos);
+                pos += 4;
+                float consigne_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float consigne_th= BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float measure_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float measure_th = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float error_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float error_th = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float command_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float command_th = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float kp_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float kp_th = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float cop_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float cop_th = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float corrpmax_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float corrpmax_th = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float ki_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4; 
+                float ki_th = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float coi_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float coi_th = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float corrimax_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float corrimax_th = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float kd_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float kd_th = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float cod_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float cod_th = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float corrdmax_x = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float cordmax_th = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                asservSpeedDisplay.UpdatePolarSpeedConsigneValues(consigne_x, consigne_th);
+                asservSpeedDisplay.UpdatePolarSpeedCommandValues(command_x, command_th);
+                asservSpeedDisplay.UpdatePolarOdometrySpeed(measure_x, measure_th);
+                asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(corrpmax_x, corrpmax_th, corrimax_x, corrimax_th, corrdmax_x, cordmax_th);
+                asservSpeedDisplay.UpdatePolarSpeedErrorValues(error_x,error_th);
+                asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(cod_x, cod_th, coi_x, coi_th, cod_x, cod_th);
+                asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(kp_x, kp_th, ki_x, ki_th, kd_x, kd_th);
+                asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(corrpmax_x, corrpmax_th, corrimax_x, corrimax_th, corrdmax_x, cordmax_th);
+
+
+            }
              if(msgFunction == (int)FonctionId.dist)
             {
                 IRGauche.Text = msgPayload[0]+"cm";
@@ -467,6 +543,11 @@ namespace RobotInterface
             byte[] ledPayload = Encoding.ASCII.GetBytes("O3");
             int ledPayloadLenght = ledPayload.Length;
             UartEncodeAndSendMessage(ledFunction, ledPayloadLenght, ledPayload);
+        }
+
+        private void asservSpeedDisplay_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
