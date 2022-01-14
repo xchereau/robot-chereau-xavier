@@ -415,14 +415,19 @@ namespace RobotInterface
                 pos += 4;
                 float cordmax_th = BitConverter.ToSingle(msgPayload, pos);
                 pos += 4;
+                float vitesse_d = BitConverter.ToSingle(msgPayload, pos);
+                pos += 4;
+                float vitesse_g = BitConverter.ToSingle(msgPayload, pos);
+
                 asservSpeedDisplay.UpdatePolarSpeedConsigneValues(consigne_x, consigne_th);
                 asservSpeedDisplay.UpdatePolarSpeedCommandValues(command_x, command_th);
                 asservSpeedDisplay.UpdatePolarOdometrySpeed(measure_x, measure_th);
                 asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(corrpmax_x, corrpmax_th, corrimax_x, corrimax_th, corrdmax_x, cordmax_th);
                 asservSpeedDisplay.UpdatePolarSpeedErrorValues(error_x,error_th);
-                asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(cod_x, cod_th, coi_x, coi_th, cod_x, cod_th);
+                asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(cop_x, cop_th, coi_x, coi_th, cod_x, cod_th);
                 asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(kp_x, kp_th, ki_x, ki_th, kd_x, kd_th);
                 asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(corrpmax_x, corrpmax_th, corrimax_x, corrimax_th, corrdmax_x, cordmax_th);
+                asservSpeedDisplay.UpdateIndependantOdometrySpeed(vitesse_g, vitesse_d);
 
 
             }
@@ -437,7 +442,6 @@ namespace RobotInterface
             {
                 textBoxmg.Text = msgPayload[0]+"%";
                 textBoxmd.Text = msgPayload[1]+"%";
-                
             }
 
             if(msgFunction == (int)FonctionId.position)

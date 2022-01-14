@@ -94,6 +94,9 @@ void QEIUpdateData ()
     
 }
 
+
+
+
 //consigne 
 double consigneX = 0.01;
 double consigneTheta = 0.02;
@@ -137,7 +140,7 @@ double CorrPMaxTheta = 0.26;
 //double CorrPMaxM2 = 0.28;
 
 //KI
-double KiMax = 0.29;
+double KiX = 0.29;
 double KiTheta = 0.3;
 //double KiM1 = 0.31;
 //double KiM2 = 0.32;
@@ -155,7 +158,7 @@ double CorrIMaxTheta = 0.38;
 //double CorrIMaxM2 = 0.4;
 
 //KD
-double KdMax = 0.41;
+double KdX = 0.41;
 double KdTheta = 0.42;
 //double KdM1 = 0.43;
 //double KdM2 = 0.44;
@@ -187,36 +190,39 @@ void SendPositionData()
 //    getBytesFromFloat ( positionPayload , 20 , ( float ) ( robotState.vitesseAngulaireFromOdometry ) ) ;
 //    UartEncodeAndSendMessage (POSITION_DATA, 24 , positionPayload) ;
    
-    unsigned char positionPayload1 [104] ;
+    unsigned char positionPayload1 [116] ;
     getBytesFromInt32 ( positionPayload1, 0, timestamp) ;
-    getBytesFromFloat ( positionPayload1, 4, ( float ) ( 1.2 )) ;
-    getBytesFromFloat ( positionPayload1, 8, ( float ) ( 2.5 )) ;
-    getBytesFromFloat ( positionPayload1, 12, ( float ) ( 6.8 )) ;
-    getBytesFromFloat ( positionPayload1, 16, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 20, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 24, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 28, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 32, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 36, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 40, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 44, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 48, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 52, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 56, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 60, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 64, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 68, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 72, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 76, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 80, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 84, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 88, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 92, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 96, ( float ) ( consigneX )) ;
-    getBytesFromFloat ( positionPayload1, 100, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 4, ( float ) ( consigneX )) ;
+    getBytesFromFloat ( positionPayload1, 8, ( float ) ( consigneTheta )) ;
+    getBytesFromFloat ( positionPayload1, 12, ( float ) ( measureX )) ;
+    getBytesFromFloat ( positionPayload1, 16, ( float ) ( measureTheta )) ;
+    getBytesFromFloat ( positionPayload1, 20, ( float ) ( ErrorX )) ;
+    getBytesFromFloat ( positionPayload1, 24, ( float ) ( ErrorTheta )) ;
+    getBytesFromFloat ( positionPayload1, 28, ( float ) ( commandX )) ;
+    getBytesFromFloat ( positionPayload1, 32, ( float ) ( commandTheta )) ;
+    getBytesFromFloat ( positionPayload1, 36, ( float ) ( KpX )) ;
+    getBytesFromFloat ( positionPayload1, 40, ( float ) ( KpTheta )) ;
+    getBytesFromFloat ( positionPayload1, 44, ( float ) ( CoPX )) ;
+    getBytesFromFloat ( positionPayload1, 48, ( float ) ( CoPTheta )) ;
+    getBytesFromFloat ( positionPayload1, 52, ( float ) ( CorrPMaxX )) ;
+    getBytesFromFloat ( positionPayload1, 56, ( float ) ( CorrPMaxTheta )) ;
+    getBytesFromFloat ( positionPayload1, 60, ( float ) ( KiX )) ;
+    getBytesFromFloat ( positionPayload1, 64, ( float ) ( KiTheta )) ;
+    getBytesFromFloat ( positionPayload1, 68, ( float ) ( CoIX )) ;
+    getBytesFromFloat ( positionPayload1, 72, ( float ) ( CoITheta )) ;
+    getBytesFromFloat ( positionPayload1, 76, ( float ) ( CorrIMaxX )) ;
+    getBytesFromFloat ( positionPayload1, 80, ( float ) ( CorrIMaxTheta )) ;
+    getBytesFromFloat ( positionPayload1, 84, ( float ) ( KdX )) ;
+    getBytesFromFloat ( positionPayload1, 88, ( float ) ( KdTheta )) ;
+    getBytesFromFloat ( positionPayload1, 92, ( float ) ( CoDX )) ;
+    getBytesFromFloat ( positionPayload1, 96, ( float ) ( CoDTheta )) ;
+    getBytesFromFloat ( positionPayload1, 100, ( float ) ( CorrDMaxX )) ;
+    getBytesFromFloat ( positionPayload1, 104, ( float ) ( CorrDMaxTheta )) ;
+    getBytesFromFloat ( positionPayload1, 108, ( float ) ( robotState.vitesseDroitFromOdometry )) ;
+    getBytesFromFloat ( positionPayload1, 112, ( float ) ( robotState.vitesseGaucheFromOdometry )) ;
 
     
-    UartEncodeAndSendMessage (POSITION_DATA, 104 , positionPayload1) ;
+    UartEncodeAndSendMessage (POSITION_DATA, 116 , positionPayload1) ;
     
     
 
