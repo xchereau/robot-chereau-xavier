@@ -17,6 +17,7 @@
 #include "automatique.h"
 #include "manuelle.h"
 #include "Utilities.h"
+#include "asservissement.h"
 
 #define PI 3.1415
 #define POSITION_DATA 0x0061

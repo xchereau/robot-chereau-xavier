@@ -427,7 +427,7 @@ namespace RobotInterface
                 asservSpeedDisplay.UpdatePolarSpeedCorrectionValues(cop_x, cop_th, coi_x, coi_th, cod_x, cod_th);
                 asservSpeedDisplay.UpdatePolarSpeedCorrectionGains(kp_x, kp_th, ki_x, ki_th, kd_x, kd_th);
                 asservSpeedDisplay.UpdatePolarSpeedCorrectionLimits(corrpmax_x, corrpmax_th, corrimax_x, corrimax_th, corrdmax_x, cordmax_th);
-                asservSpeedDisplay.UpdateIndependantOdometrySpeed(vitesse_g, vitesse_d);
+                asservSpeedDisplay. UpdateIndependantOdometrySpeed(vitesse_g, vitesse_d);
 
 
             }
@@ -551,6 +551,8 @@ namespace RobotInterface
 
         private void asservSpeedDisplay_Loaded(object sender, RoutedEventArgs e)
         {
+
+
 
         }
     }

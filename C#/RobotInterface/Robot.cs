@@ -19,6 +19,9 @@ namespace RobotInterface
         public float vitesselineaire;
         public float vitesseangulaire;
 
+        
+      
+
         public Queue<byte> byteListReceived = new Queue<byte>();
 
         public Robot()
